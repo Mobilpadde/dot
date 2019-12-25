@@ -32,6 +32,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/gv.vim'
 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 set termguicolors

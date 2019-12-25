@@ -1,7 +1,7 @@
-# /home/avl/.config/tmuxinator/unbug.yml
+# /home/avl/.config/tmuxinator/rustlings.yml
 
-name: unbug
-root: ~/Work/unbug
+name: rustlings
+root: ~/Work/rustlings
 
 # Optional tmux socket
 # socket_name: foo
@@ -41,12 +41,7 @@ root: ~/Work/unbug
 
 windows:
   - editor:
-      layout: b404,213x56,0,0{134x56,0,0,0,78x56,135,0[78x28,135,0,2,78x27,135,29{39x27,135,29,3,38x27,175,29,4}]}
+      layout: main-vertical
       panes:
-        - vim .
-        - panes:
-          - set -gx GL_REDIRECT_URI "http://localhost:3000/auth/gl"
-          - clear
-        - make watch-app
-        - make watch-test
-  - backend: ls -lah
+        - vim exercises
+        - rustlings watch
