@@ -1,8 +1,8 @@
-.PHONY: all clean vim tmux tmuxinator i3
-all: vim tmux tmuxinator i3
+.PHONY: all clean vim tmux tmuxinator i3 ohmyzsh
+all: vim tmux tmuxinator i3 ohmyzsh
 
 vim:
-	ln $(PWD)/vimrc ~/.vimrc
+	ln -s $(PWD)/vimrc ~/.vimrc
 
 tmux:
 	ln -s $(PWD)/tmux.conf ~/.tmux.conf
@@ -16,5 +16,9 @@ i3:
 	mkdir -p ~/.i3
 	ln -s $(PWD)/i3.conf ~/.i3/config
 
+ohmyzsh:
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	ln -s $(PWD)/zshrc ~/.zshrc
+
 clean:
-	rm ~/.vimrc ~/.tmux.conf ~/.config/tmuxinator -rfd
+	rm ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.config/tmuxinator -rfd
