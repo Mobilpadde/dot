@@ -77,6 +77,7 @@ plugins=(
 	golang
 	npm
 	emoji-clock
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
