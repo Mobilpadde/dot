@@ -75,9 +75,12 @@ plugins=(
 	themes
 	autojump
 	golang
-	npm
+	git
 	emoji-clock
+  dotenv
+  fzf
   zsh-autosuggestions
+  git-auto-fetch
 )
 
 source $ZSH/oh-my-zsh.sh
