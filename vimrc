@@ -52,6 +52,8 @@ Plug 'mattn/vim-lsp-settings'
 
 Plug 'natebosch/vim-lsc'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 set termguicolors
