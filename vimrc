@@ -10,6 +10,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'tpope/vim-surround'
 
+Plug 'tpope/vim-commentary'
+
 Plug 'scrooloose/nerdtree'
 
 Plug 'scrooloose/nerdcommenter'
@@ -20,7 +22,7 @@ Plug 'kien/ctrlp.vim'
 
 Plug 'ervandew/supertab'
 
-Plug 'sainnhe/vim-color-forest-night'
+Plug 'franbach/miramare'
 
 Plug 'pangloss/vim-javascript'
 
@@ -54,10 +56,17 @@ Plug 'natebosch/vim-lsc'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'Yggdroot/indentLine'
+
+Plug 'unblevable/quick-scope'
+
 call plug#end()
 
 set termguicolors
-colorscheme forest-night
+colorscheme miramare
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -67,12 +76,13 @@ set statusline+=%{NearestMethodOrFunction()}
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista#renderer#enable_icon = 1
 let g:vista_sidebar_width = 60
-let g:vista_fzf_preview = ['right:50%']
+let g:vista_fzf_preview = ['bottom:35%']
 
 let NERDTreeShowHidden = 1
 let go_fmt_autosave = 1
-
 let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
+
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("e")': ['<c-t>'],
       \ 'AcceptSelection("t")': ['<cr>', '<c-tab>', '<2-LeftMouse>'],
@@ -89,6 +99,12 @@ let g:lightline = {
       \ },
       \ }
 
+" line indentions
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" navigation
+let g:qs_highlight_on_keys = ['f', 'F']
+
 map <C-q> :NERDTreeToggle<CR>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -96,6 +112,12 @@ map <F7> gg=G<C-o><C-o>
 
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :Vista!!<CR>
+
+" fzf
+nnoremap <leader>f :Files<CR>
+
+" display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 set listchars+=space:·
 set rnu
