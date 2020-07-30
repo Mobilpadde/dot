@@ -4,6 +4,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -63,6 +67,11 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'unblevable/quick-scope'
 
+Plug 'bling/vim-airline'
+Plug 'jacoborus/tender.vim'
+
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 set termguicolors
@@ -118,6 +127,9 @@ nnoremap <leader>f :Files<CR>
 
 " display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
+
+" airline
+let g:airline_theme = 'tender'
 
 set listchars+=space:·
 set rnu
