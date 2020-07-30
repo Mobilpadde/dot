@@ -130,6 +130,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 " airline
 let g:airline_theme = 'tender'
+set laststatus=2
 
 set listchars+=space:·
 set rnu
@@ -139,4 +140,11 @@ set sts=2
 set ts=2
 set sw=2
 set et
-set laststatus=2
+
+"Go
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
