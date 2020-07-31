@@ -72,6 +72,10 @@ Plug 'jacoborus/tender.vim'
 
 Plug 'tpope/vim-surround'
 
+Plug 'majutsushi/tagbar'
+
+Plug 'irrationalistic/vim-tasks'
+
 call plug#end()
 
 set termguicolors
@@ -119,11 +123,14 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 map <F7> gg=G<C-o><C-o>
 
+nmap <F8> :TagbarToggle<CR>
+
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :Vista!!<CR>
 
 " fzf
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>r :Rg <CR>
 
 " display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
