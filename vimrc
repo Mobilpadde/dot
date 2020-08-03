@@ -76,6 +76,8 @@ Plug 'majutsushi/tagbar'
 
 Plug 'irrationalistic/vim-tasks'
 
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 call plug#end()
 
 set termguicolors
@@ -117,6 +119,13 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " navigation
 let g:qs_highlight_on_keys = ['f', 'F']
+
+" prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#quickfix_enabled = 0
+
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 map <C-q> :NERDTreeToggle<CR>
 map <C-n> :cnext<CR>
