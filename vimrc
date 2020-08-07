@@ -76,7 +76,10 @@ Plug 'majutsushi/tagbar'
 
 Plug 'irrationalistic/vim-tasks'
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x'
+  \ }
 
 call plug#end()
 
@@ -123,9 +126,7 @@ let g:qs_highlight_on_keys = ['f', 'F']
 " prettier
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
-let g:prettier#quickfix_enabled = 0
-
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#quickfix_enabled = 1
 
 map <C-q> :NERDTreeToggle<CR>
 map <C-n> :cnext<CR>
@@ -140,6 +141,10 @@ nnoremap <leader>q :Vista!!<CR>
 " fzf
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg <CR>
+
+" prettier
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html,*.svelte PrettierAsync
 
 " display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
