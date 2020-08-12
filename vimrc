@@ -34,8 +34,6 @@ Plug 'evanleck/vim-svelte'
 
 Plug 'iloginow/vim-stylus'
 
-Plug 'valloric/youcompleteme'
-
 Plug 'dense-analysis/ale'
 
 Plug 'kien/rainbow_parentheses.vim'
