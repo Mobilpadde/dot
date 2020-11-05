@@ -12,6 +12,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'ollykel/v-vim'
+
+Plug 'NoorWachid/VimVLanguage'
+
 Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-commentary'
@@ -27,6 +31,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 
 Plug 'franbach/miramare'
+Plug 'sainnhe/forest-night'
 
 Plug 'pangloss/vim-javascript'
 
@@ -82,6 +87,11 @@ Plug 'prettier/vim-prettier', {
 call plug#end()
 
 set termguicolors
+
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+let g:miramare_transparent_background = 1
+
 colorscheme miramare
 
 function! NearestMethodOrFunction() abort

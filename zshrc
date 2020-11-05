@@ -123,11 +123,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
-# chectl autocomplete setup
-CHECTL_AC_ZSH_SETUP_PATH=/home/avl/.cache/chectl/autocomplete/zsh_setup && test -f $CHECTL_AC_ZSH_SETUP_PATH && source $CHECTL_AC_ZSH_SETUP_PATH;
-
-source $HOME/.cargo/env
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/avl/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/path.zsh.inc'; fi
 
