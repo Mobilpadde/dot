@@ -14,6 +14,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'tpope/vim-surround'
 
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
 Plug 'tpope/vim-commentary'
 
 Plug 'scrooloose/nerdtree'
@@ -33,8 +35,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
 
 Plug 'iloginow/vim-stylus'
-
-Plug 'valloric/youcompleteme'
 
 Plug 'dense-analysis/ale'
 
