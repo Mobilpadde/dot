@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
 Plug 'ollykel/v-vim'
 
 Plug 'NoorWachid/VimVLanguage'
