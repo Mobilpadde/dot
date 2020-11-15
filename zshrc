@@ -1,11 +1,41 @@
 export EDITOR="vim"
-export BROWSER="vivaldi-stable"
+export BROWSER="brave"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/avl/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+source ~/antigen.zsh
+
+antigen init ~/.antigenrc
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle themes
+antigen bundle golang
+antigen bundle git
+antigen bundle emoji-clock
+antigen bundle dotenv
+antigen bundle fzf
+antigen bundle git-auto-fetch
+
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle docker
+
+antigen bundle agkozak/zsh-z
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme denysdovhan/spaceship-prompt
+
+antigen apply
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,20 +101,6 @@ ZSH_THEME="fino-time"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	themes
-	zsh-z
-	golang
-	git
-	emoji-clock
-  dotenv
-  fzf
-  zsh-autosuggestions
-  git-auto-fetch
-)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -133,3 +149,5 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mc mc
 
 neofetch
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/bit bit
