@@ -20,6 +20,8 @@ Plug 'NoorWachid/VimVLanguage'
 
 Plug 'tpope/vim-surround'
 
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
 Plug 'tpope/vim-commentary'
 
 Plug 'scrooloose/nerdtree'
