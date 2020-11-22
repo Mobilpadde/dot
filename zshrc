@@ -132,7 +132,7 @@ ZSH_THEME="fino-time"
 export GOROOT=/usr/local/go
 export GOPATH=/home/avl/go
 export PATH=$GOPATH/bin:$GOROOT/bin:/home/avl/go/workspace/bin:/bin:/home/avl/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin:$HOME/.garden/bin
-export PATH=$PATH:$HOME/.linkerd2/bin
+export PATH=$PATH:/home/avl/.cargo/bin
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
