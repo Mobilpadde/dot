@@ -83,6 +83,8 @@ Plug 'majutsushi/tagbar'
 
 Plug 'irrationalistic/vim-tasks'
 
+Plug 'goonzoid/vim-reprocessed'
+
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/0.x'
@@ -94,9 +96,11 @@ set termguicolors
 
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
-let g:miramare_transparent_background = 1
+let g:miramare_transparent_background = 0
 
 colorscheme miramare
+
+let mapleader = " "
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -153,6 +157,14 @@ nnoremap <leader>q :Vista!!<CR>
 " fzf
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg <CR>
+
+" ,;
+imap ;; <Esc>A;<Esc>
+imap ,, <Esc>A,<Esc>
+
+" processing
+let g:reprocessed_map_keys = 0
+nnoremap <leader>1 :RunCurrentSketch<cr>
 
 " prettier
 let g:prettier#quickfix_enabled = 0
