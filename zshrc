@@ -1,7 +1,5 @@
 export EDITOR="vim"
-export BROWSER="vivaldi-stable"
-
-alias vim="nvim"
+export BROWSER="google-chrome"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -17,15 +15,13 @@ antigen init ~/.antigenrc
 antigen use oh-my-zsh
 
 antigen bundle git
+antigen bundle kubectl
+antigen bundle git-auto-fetch
 antigen bundle themes
 antigen bundle golang
-antigen bundle git
 antigen bundle emoji-clock
 antigen bundle dotenv
 antigen bundle fzf
-antigen bundle git-auto-fetch
-
-antigen bundle git
 antigen bundle command-not-found
 antigen bundle docker
 
@@ -79,10 +75,10 @@ alias gcd="git checkout dev"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -140,24 +136,21 @@ export PATH=$PATH:/home/avl/.cargo/bin
 export PATH=$PATH:/home/avl/.pnpm-store/bin
 export PATH=$PATH:/home/avl/Documents/processing-3.5.4
 
-export FLYCTL_INSTALL="/home/avl/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/avl/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/avl/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/completion.zsh.inc'; fi
 
-neofetch
+source <(kubectl completion zsh)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
+neofetch
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
