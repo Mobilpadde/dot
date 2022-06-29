@@ -1,5 +1,4 @@
-.PHONY: all vim tmux tmuxinator i3 x ohmyzsh
-all: vim tmux tmuxinator i3 x ohmyzsh
+all: vim ohmyzsh neofetch # x tmux tmuxinator i3 
 
 vim:
 	rm -f ~/.vimrc
@@ -31,3 +30,7 @@ zsh-auto-suggest:
 x:
 	rm -f ~/.Xresources
 	ln -s $(PWD)/Xresources ~/.Xresources
+
+neofetch:
+	rm -f ~/.config/neofetch/config.conf
+	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
