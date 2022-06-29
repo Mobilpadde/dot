@@ -149,7 +149,6 @@ neofetch
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source <(kubectl completion zsh)
-source /home/mc/.gvm/scripts/gvm
 
 export PNPM_HOME="/home/mc/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
