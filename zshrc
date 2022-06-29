@@ -154,4 +154,6 @@ source /home/mc/.gvm/scripts/gvm
 export PNPM_HOME="/home/mc/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+bindkey '^H' backward-kill-word
+
 eval "$(starship init zsh)"
