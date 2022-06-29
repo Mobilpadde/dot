@@ -134,6 +134,7 @@ export PATH=$GOPATH/bin:/home/avl/bin:/home/avl/go/workspace/bin:/bin:/home/avl/
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/mc/.composer/vendor/bin
 export PATH=$PATH:/sbin:/usr/sbin
+export PATH=$PATH:/home/mc/.cargo/bin
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -156,3 +157,17 @@ export PATH="$PNPM_HOME:$PATH"
 bindkey '^H' backward-kill-word
 
 eval "$(starship init zsh)"
+
+# Tokei on cd'ing into a repo
+LAST_REPO=""
+cd() {
+    builtin cd "$@";
+    git rev-parse 2>/dev/null;
+
+    if [ $? -eq 0 ]; then
+        if [ "$LAST_REPO" != $(basename $(git rev-parse --show-toplevel)) ]; then
+        tokei
+        LAST_REPO=$(basename $(git rev-parse --show-toplevel))
+        fi
+    fi
+}
