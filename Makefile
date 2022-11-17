@@ -34,3 +34,6 @@ x:
 neofetch:
 	rm -f ~/.config/neofetch/config.conf
 	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
+
+extras:
+	cargo install exa xcp fd-find bottom git-delta

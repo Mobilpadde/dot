@@ -31,6 +31,15 @@ antigen theme candy
 
 antigen apply
 
+export RUSTUP_HOME=$HOME/.rustup
+export CARGO_HOME=$HOME/.cargo
+export PATH=$CARGO_HOME/bin:$PATH
+
+# Install rustup if it isn't installed already
+if ! [[ -s "${HOME}/.rustup" ]]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
+fi
+
 alias gcd="git checkout dev"
 alias gap="git add -p"
 
