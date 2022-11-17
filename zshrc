@@ -165,6 +165,7 @@ cd() {
     fi
 }
 
+# requries crates to be installed
 alias exa="exa --git --icons --group-directories-first --classify --long --all --header"
 
 tree() {

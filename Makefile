@@ -24,9 +24,6 @@ ohmyzsh:
 	ln -s $(PWD)/zshrc ~/.zshrc
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh || true
 
-zsh-auto-suggest:
-	# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 x:
 	rm -f ~/.Xresources
 	ln -s $(PWD)/Xresources ~/.Xresources
