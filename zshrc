@@ -114,29 +114,29 @@ COMPLETION_WAITING_DOTS="true"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export GO111MODULE="on"
-export PATH=$GOPATH/bin:/home/avl/bin:/home/avl/go/workspace/bin:/bin:/home/avl/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin:$HOME/.garden/bin
+export PATH=$GOPATH/bin:/home/mc/bin:/home/mc/go/workspace/bin:/bin:/home/mc/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin:$HOME/.garden/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/mc/.composer/vendor/bin
 export PATH=$PATH:/sbin:/usr/sbin
 export PATH=$PATH:/home/mc/.cargo/bin
 
+export PNPM_HOME="/home/mc/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/avl/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/path.zsh.inc'; fi
-
+if [ -f '/home/mc/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mc/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/avl/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/mc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mc/google-cloud-sdk/completion.zsh.inc'; fi
 
 neofetch
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source <(kubectl completion zsh)
-
-export PNPM_HOME="/home/mc/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# source <(kubectl completion zsh)
 
 bindkey '^H' backward-kill-word
 
