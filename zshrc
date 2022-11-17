@@ -133,7 +133,6 @@ if [ -f '/home/mc/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mc/google-clou
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/mc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mc/google-cloud-sdk/completion.zsh.inc'; fi
 
-neofetch
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # source <(kubectl completion zsh)
@@ -141,6 +140,7 @@ neofetch
 bindkey '^H' backward-kill-word
 
 eval "$(starship init zsh)"
+neofetch
 
 # Tokei on cd'ing into a repo
 LAST_REPO=""
