@@ -32,5 +32,12 @@ neofetch:
 	rm -f ~/.config/neofetch/config.conf
 	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
 
-extras:
+# Extra stuff
+extras: crates delta-git
+
+crates:
 	cargo install exa xcp fd-find bottom git-delta
+
+delta-git:
+	echo "\n# delta" >> ~/.gitconfig
+	cat $(PWD)/delta >> ~/.gitconfig
