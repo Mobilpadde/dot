@@ -164,3 +164,9 @@ cd() {
         fi
     fi
 }
+
+alias exa="exa --git --icons --group-directories-first --classify --long --all --header"
+
+tree() {
+  exa --tree --git-ignore --ignore-glob=".git|node_modules" --level=${1:=3}
+}
