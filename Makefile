@@ -24,9 +24,6 @@ ohmyzsh:
 	ln -s $(PWD)/zshrc ~/.zshrc
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh || true
 
-zsh-auto-suggest:
-	#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 x:
 	rm -f ~/.Xresources
 	ln -s $(PWD)/Xresources ~/.Xresources
@@ -35,3 +32,13 @@ neofetch:
 	mkdir -p ~/.config/neofetch
 	rm -f ~/.config/neofetch/config.conf
 	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
+
+# Extra stuff
+extras: crates delta-git
+
+crates:
+	cargo install exa xcp fd-find bottom git-delta
+
+delta-git:
+	echo "\n# delta" >> ~/.gitconfig
+	cat $(PWD)/delta >> ~/.gitconfig
