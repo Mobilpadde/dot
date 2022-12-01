@@ -5,7 +5,7 @@ export BROWSER="google-chrome"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mc/.oh-my-zsh"
+export ZSH="/Users/mc/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 source ~/antigen.zsh
@@ -146,7 +146,6 @@ if [ -f '/home/avl/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avl/google-cl
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/avl/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avl/google-cloud-sdk/completion.zsh.inc'; fi
 
-neofetch
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source <(kubectl completion zsh)
@@ -156,6 +155,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 bindkey '^H' backward-kill-word
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
 # Tokei on cd'ing into a repo
@@ -171,3 +171,12 @@ cd() {
         fi
     fi
 }
+
+neofetch
+
+# bun completions
+[ -s "/Users/mc/.bun/_bun" ] && source "/Users/mc/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/mc/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
