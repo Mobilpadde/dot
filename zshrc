@@ -1,7 +1,7 @@
 export EDITOR="vim"
 export BROWSER="vivaldi"
 
-export ZSH="/Users/mc/.oh-my-zsh"
+export ZSH="/home/mc/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 source ~/antigen.zsh
