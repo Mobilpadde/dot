@@ -1,7 +1,7 @@
 export EDITOR="vim"
 export BROWSER="vivaldi"
 
-export ZSH="/home/mc/.oh-my-zsh"
+export ZSH="/Users/mc/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 source ~/antigen.zsh
@@ -148,6 +148,7 @@ if [ -f '/home/mc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mc/googl
 
 bindkey '^H' backward-kill-word
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 neofetch
 
@@ -172,3 +173,4 @@ alias exa="exa --git --icons --group-directories-first --classify --long --all -
 tree() {
   exa --tree --git-ignore --ignore-glob=".git|node_modules" --level=${1:=3}
 }
+source "$HOME/.cargo/env"

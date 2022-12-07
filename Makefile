@@ -29,6 +29,7 @@ x:
 	ln -s $(PWD)/Xresources ~/.Xresources
 
 neofetch:
+	mkdir -p ~/.config/neofetch
 	rm -f ~/.config/neofetch/config.conf
 	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
 
