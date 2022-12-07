@@ -1,5 +1,5 @@
 export EDITOR="vim"
-export BROWSER="google-chrome"
+export BROWSER="vivaldi"
 
 export ZSH="/home/mc/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
