@@ -17,16 +17,15 @@ antigen bundle emoji-clock
 antigen bundle dotenv
 antigen bundle fzf
 antigen bundle command-not-found
+antigen bundle term_tab
+
 antigen bundle docker
+antigen bundle docker-compose
 
 antigen bundle agkozak/zsh-z
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen bundle golang
-antigen bundle term_tab
-antigen bundle docker-compose
 
 # antigen theme denysdovhan/spaceship-prompt
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
