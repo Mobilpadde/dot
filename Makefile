@@ -1,4 +1,4 @@
-all: vim ohmyzsh neofetch # x tmux tmuxinator i3 
+all: vim ohmyzsh neofetch starship extras # x tmux tmuxinator i3 
 
 vim:
 	rm -f ~/.vimrc
@@ -23,6 +23,7 @@ ohmyzsh:
 	rm -f ~/.zshrc
 	ln -s $(PWD)/zshrc ~/.zshrc
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh || true
+	curl -L git.io/antigen > ~/antigen.zsh
 
 x:
 	rm -f ~/.Xresources
@@ -33,12 +34,14 @@ neofetch:
 	rm -f ~/.config/neofetch/config.conf
 	ln -s $(PWD)/neofetch.conf ~/.config/neofetch/config.conf
 
+starship:
+	ln -s $(PWD)/starship.toml ~/.config/starship.toml
+
 # Extra stuff
-extras: crates delta-git
+extras: crates git
 
 crates:
-	cargo install exa xcp fd-find bottom git-delta
+	cargo install starship exa xcp fd-find bottom bat git-delta
 
-delta-git:
-	echo "\n# delta" >> ~/.gitconfig
-	cat $(PWD)/delta >> ~/.gitconfig
+git:
+	ln -s $(PWD)/gitconfig.toml ~/.gitconfig

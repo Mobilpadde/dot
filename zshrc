@@ -24,6 +24,14 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+antigen bundle golang
+antigen bundle emoji
+antigen bundle term_tab
+
+antigen bundle docker-compose
+
+antigen bundle command-not-found
+
 # antigen theme denysdovhan/spaceship-prompt
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
@@ -166,6 +174,9 @@ cd() {
     fi
 }
 
+# unalias ll
+unalias ll
+
 # requries crates to be installed
 
 alias exa="exa --git --icons --group-directories-first --classify --long --all --header"
@@ -173,4 +184,28 @@ alias exa="exa --git --icons --group-directories-first --classify --long --all -
 tree() {
   exa --tree --git-ignore --ignore-glob=".git|node_modules" --level=${1:=3}
 }
+
+# aliases
+
+# find N-largest files
+large() {
+  find . -type f -printf '%s %P\n' | du -bh 2>/dev/null | sort -nr | head -${1:=10}
+}
+
+# ll is exa
+# alias ll="exa"
+# grep if needed
+ll() {
+  grep=$1
+  if [[ -z $grep ]] then
+    exa
+  else
+    exa | grep $grep
+  fi
+}
+
+# cats be bats
+alias cat="bat"
+
 source "$HOME/.cargo/env"
+source /usr/share/nvm/init-nvm.sh
