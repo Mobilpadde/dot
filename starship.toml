@@ -1,4 +1,27 @@
-[sudo]
-style = 'bold green'
-symbol = '👩‍💻 '
+[status]
+symbol = '🔴'
+# success_symbol = '🟢'
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
 disabled = false
+
+[git_branch]
+symbol = '🌱 '
+truncation_length = 4
+truncation_symbol = ''
+ignore_branches = ['master', 'main']
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+ahead = '⇡${c#ount}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[memory_usage]
+disabled = false
+threshold = -1
+format = 'using [${ram}]($style)'
+style = 'bold dimmed green'
