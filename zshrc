@@ -25,12 +25,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen bundle golang
-antigen bundle emoji
 antigen bundle term_tab
-
 antigen bundle docker-compose
-
-antigen bundle command-not-found
 
 # antigen theme denysdovhan/spaceship-prompt
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
