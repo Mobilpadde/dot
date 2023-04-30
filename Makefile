@@ -1,4 +1,4 @@
-all: vim ohmyzsh neofetch starship extras # x tmux tmuxinator i3 
+all: vim ohmyzsh neofetch starship extras # x tmux tmuxinator i3
 
 vim:
 	rm -f ~/.vimrc
@@ -41,7 +41,7 @@ starship:
 extras: crates git
 
 crates:
-	cargo install starship exa xcp fd-find bottom bat git-delta
+	cargo install starship exa xcp fd-find bottom bat git-delta tokei fnm
 
 git:
 	ln -s $(PWD)/gitconfig.toml ~/.gitconfig

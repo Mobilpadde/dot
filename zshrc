@@ -1,5 +1,7 @@
 export EDITOR="vim"
-export BROWSER="vivaldi"
+export BROWSER="firefox"
+
+export TERM=gnome-256color
 
 export ZSH="/home/mc/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -30,7 +32,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen theme denysdovhan/spaceship-prompt
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-antigen theme candy
+# antigen theme candy
 
 antigen apply
 
@@ -126,8 +128,9 @@ COMPLETION_WAITING_DOTS="true"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export GO111MODULE="on"
-export PATH=$GOPATH/bin:/home/mc/bin:/home/mc/go/workspace/bin:/bin:/home/mc/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin:$HOME/.garden/bin
-export PATH=$PATH:/usr/local/go/bin
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOBIN
+export PATH=$PATH:/home/mc/bin:/home/mc/go/workspace/bin:/bin:/home/mc/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin
 export PATH=$PATH:/home/mc/.composer/vendor/bin
 export PATH=$PATH:/sbin:/usr/sbin
 export PATH=$PATH:/home/mc/.cargo/bin
@@ -135,8 +138,8 @@ export PATH=$PATH:/home/mc/.cargo/bin
 export PNPM_HOME="/home/mc/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export ENCORE_INSTALL="/home/mc/.encore"
+export PATH="$ENCORE_INSTALL/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
@@ -145,28 +148,26 @@ if [ -f '/home/mc/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mc/google-clou
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/mc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mc/google-cloud-sdk/completion.zsh.inc'; fi
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # source <(kubectl completion zsh)
 
 bindkey '^H' backward-kill-word
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 neofetch
 
 # Tokei on cd'ing into a repo
 LAST_REPO=""
 cd() {
-    builtin cd "$@";
-    git rev-parse 2>/dev/null;
+  builtin cd "$@"
+  git rev-parse 2>/dev/null
 
-    if [ $? -eq 0 ]; then
-        if [ "$LAST_REPO" != $(basename $(git rev-parse --show-toplevel)) ]; then
-        tokei
-        LAST_REPO=$(basename $(git rev-parse --show-toplevel))
-        fi
+  if [ $? -eq 0 ]; then
+    if [ "$LAST_REPO" != $(basename $(git rev-parse --show-toplevel)) ]; then
+      tokei
+      LAST_REPO=$(basename $(git rev-parse --show-toplevel))
     fi
+  fi
 }
 
 # unalias ll
@@ -192,15 +193,15 @@ large() {
 # grep if needed
 ll() {
   grep=$1
-  if [[ -z $grep ]] then
+  if [[ -z $grep ]]; then
     exa
   else
-    exa | grep $grep
+    exa | grep -i $grep
   fi
 }
 
 # cats be bats
 alias cat="bat"
 
-source "$HOME/.cargo/env"
-source /usr/share/nvm/init-nvm.sh
+# source "$HOME/.cargo/env"
+eval "$(fnm env --use-on-cd)"

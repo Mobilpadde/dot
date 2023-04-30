@@ -2,7 +2,7 @@
   defaultBranch = main
 
 [user]
-  name = Mads Cordes
+	name = Mads Bram Cordes
   email = Mobilpadde@gmail.com
   username = Mobilpadde
 
@@ -16,7 +16,7 @@
   default = upstream
 
 [core]
-  editor = vim
+	editor = vim
   pager = delta
 
 [merge]
