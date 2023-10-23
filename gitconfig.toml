@@ -1,8 +1,12 @@
 [init]
   defaultBranch = main
 
+[core]
+  editor = vim
+  pager = delta
+
 [user]
-	name = Mads Bram Cordes
+  name = Mads Bram Cordes
   email = Mobilpadde@gmail.com
   username = Mobilpadde
 
@@ -15,9 +19,8 @@
 [push]
   default = upstream
 
-[core]
-	editor = vim
-  pager = delta
+[pull]
+  rebase = false
 
 [merge]
   conflictstyle = diff3
