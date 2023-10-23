@@ -1,5 +1,5 @@
 export EDITOR="vim"
-export BROWSER="firefox"
+export BROWSER="vivaldi-stable"
 
 export TERM=gnome-256color
 
@@ -11,35 +11,37 @@ source ~/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle kubectl
 antigen bundle git-auto-fetch
-antigen bundle themes
-antigen bundle golang
-antigen bundle emoji-clock
+
+antigen bundle aliases
+
+# antigen bundle themes
+# antigen bundle emoji-clock
 antigen bundle dotenv
 antigen bundle fzf
 antigen bundle command-not-found
-antigen bundle term_tab
+# antigen bundle term_tab
 
+antigen bundle kubectl
 antigen bundle docker
 antigen bundle docker-compose
+
+antigen bundle golang
 
 antigen bundle agkozak/zsh-z
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# antigen theme denysdovhan/spaceship-prompt
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# antigen bundle ellie/atuin@main
+# antigen bundle atuinsh/atuin@main
 
+antigen theme spaceship-prompt/spaceship-prompt
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # antigen theme candy
 
 antigen apply
-
-export RUSTUP_HOME=$HOME/.rustup
-export CARGO_HOME=$HOME/.cargo
-export PATH=$CARGO_HOME/bin:$PATH
-
+#
 # Install rustup if it isn't installed already
 if ! [[ -s "${HOME}/.rustup" ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
@@ -130,16 +132,24 @@ COMPLETION_WAITING_DOTS="true"
 export GO111MODULE="on"
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
+
 export PATH=$PATH:/home/mc/bin:/home/mc/go/workspace/bin:/bin:/home/mc/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/snap/bin:/var/lib/snapd/snap/bin:/snap/bin
 export PATH=$PATH:/home/mc/.composer/vendor/bin
 export PATH=$PATH:/sbin:/usr/sbin
-export PATH=$PATH:/home/mc/.cargo/bin
+
+export RUSTUP_HOME=$HOME/.rustup
+export CARGO_HOME=$HOME/.cargo
+export PATH=$CARGO_HOME/bin:$PATH
 
 export PNPM_HOME="/home/mc/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 export ENCORE_INSTALL="/home/mc/.encore"
 export PATH="$ENCORE_INSTALL/bin:$PATH"
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$DOTNET_ROOT:$PATH
+export PATH=$DOTNET_ROOT/tools:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
@@ -151,10 +161,6 @@ if [ -f '/home/mc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mc/googl
 # source <(kubectl completion zsh)
 
 bindkey '^H' backward-kill-word
-
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
-neofetch
 
 # Tokei on cd'ing into a repo
 LAST_REPO=""
@@ -170,9 +176,6 @@ cd() {
   fi
 }
 
-# unalias ll
-unalias ll
-
 # requries crates to be installed
 
 alias exa="exa --git --icons --group-directories-first --classify --long --all --header"
@@ -183,25 +186,49 @@ tree() {
 
 # aliases
 
+# copy
+copy() {
+  xclip -selection clipboard
+}
+
 # find N-largest files
 large() {
   find . -type f -printf '%s %P\n' | du -bh 2>/dev/null | sort -nr | head -${1:=10}
 }
 
-# ll is exa
-# alias ll="exa"
-# grep if needed
-ll() {
-  grep=$1
-  if [[ -z $grep ]]; then
-    exa
-  else
-    exa | grep -i $grep
-  fi
+set-wall() {
+  img=$1
+  swww img $img
+  wal -i $img
 }
+
+# unalias ll
+# ll is exa
+alias ll="exa"
+
+# grep if needed
+# ll() {
+#  grep=$1
+#  if [[ -z $grep ]]; then
+#    exa
+#  else
+#    exa | grep -i $grep
+#  fi
+#}
 
 # cats be bats
 alias cat="bat"
 
-# source "$HOME/.cargo/env"
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
+
+source "$HOME/.cargo/env"
 eval "$(fnm env --use-on-cd)"
+eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# wal -R -et
+# clear
+
+neofetch
