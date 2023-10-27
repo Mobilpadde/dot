@@ -210,6 +210,15 @@ set-wall() {
   wal -i $img
 }
 
+stats() {
+  url=$(curl -s https://api.atuin.sh/enable -d $(cat ~/.local/share/atuin/session) | tr -d "\"") 
+  wl-copy $url
+
+  img=$HOME/Pictures/atuin-stats.png
+  curl $url -s -output $img
+  catimg $img
+}
+
 # unalias ll
 # ll is exa
 alias ll="exa"
