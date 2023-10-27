@@ -39,20 +39,36 @@ gaps outer 0
 
 focus_follows_mouse yes
 
-# screenshots
+# unbinds
+## layouts
+### unbind layout stacking
 $unbindsym $mod+s
+### unbind layout tabbed
+$unbindsym $mod+w
+### unbind layout window splitting
+$unbindsym $mod+e
+
+## unbind support?
 $unbindsym $mod+Shift+s
 
+## unbind floating focus toggle
+$unbindsym $mod+space # focus mode_toggle
+## unbind floating toggle
+$unbindsym $mod+Shift+space
+
+## dmenu
+$unbindsym $mod+d
+
+# custom
+## screenshots
 $bindsym $mod+Shift+s exec grim -g "$(slurp)" - | $swappy | wl-paste -l
 $bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy
 
-# rofi
-$unbindsym $mod+d
-$unbindsym $mod+space
-$unbindsym $mod+Shift+space
-
+## menus
+### dmenu - replace with rofi in future?
 $bindsym $mod+space exec $menu
+### emojies
 $bindsym $mod+Shift+space exec rofimoji -a copy -s neutral
 
-# floating
+## floating
 $bindsym $alt_mod+space floating toggle
