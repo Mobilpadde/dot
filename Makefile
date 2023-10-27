@@ -6,16 +6,19 @@ vim:
 	ln -s $(PWD)/vimrc ~/.vimrc
 
 sway:
-	# rm -rfd ~/.config/sway
+	rm -rfd ~/.config/sway
+	mkdir -p ~/.config/sway/config.d
+	mkdir -p ~/.config/sway/definitions.d
 	mkdir -p ~/.config/sway
 	ln -s $(PWD)/.config/sway/config.d/catppuccin-macchiato.conf ~/.config/sway/definitions.d/catppuccin-mocha
 	ln -s $(PWD)/.config/sway/config ~/.config/sway/config
 
 waybar:
-	# rm -rfd ~/.config/waybar
+	rm -rfd ~/.config/waybar
 	mkdir -p ~/.config/waybar
-	ln -s $(PWD)/.config/waybar/cuustom/cpugovernor.sh ~/.config/waybar/custom/cpugovernor.sh
-	ln -s $(PWD)/.config/waybar/cuustom/custom-gpu.sh ~/.config/waybar/custom/custom-gpu.sh
+	mkdir -p ~/.config/waybar/custom
+	ln -s $(PWD)/.config/waybar/custom/cpugovernor.sh ~/.config/waybar/custom/cpugovernor.sh
+	ln -s $(PWD)/.config/waybar/custom/custom-gpu.sh ~/.config/waybar/custom/custom-gpu.sh
 	ln -s $(PWD)/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
 	ln -s $(PWD)/.config/waybar/style.css ~/.config/waybar/style.css
 
