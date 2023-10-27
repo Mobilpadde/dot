@@ -10,7 +10,8 @@ sway:
 	mkdir -p ~/.config/sway/config.d
 	mkdir -p ~/.config/sway/definitions.d
 	mkdir -p ~/.config/sway
-	ln -s $(PWD)/.config/sway/config.d/catppuccin-macchiato.conf ~/.config/sway/definitions.d/catppuccin-mocha
+	ln -s $(PWD)/.config/sway/definitions.d/catppuccin-macchiato.conf ~/.config/sway/definitions.d/catppuccin-mocha.conf
+	ln -s $(PWD)/.config/sway/config.d/local.conf ~/.config/sway/config.d/local.conf
 	ln -s $(PWD)/.config/sway/config ~/.config/sway/config
 
 waybar:
