@@ -27,7 +27,6 @@ ohmyzsh:
 	rm -f ~/.zshrc
 	ln -s $(PWD)/zshrc ~/.zshrc
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh || true
-	curl -L git.io/antigen > ~/antigen.zsh
 
 neofetch:
 	mkdir -p ~/.config/neofetch
