@@ -24,7 +24,7 @@ waybar:
 	ln -s $(PWD)/.config/waybar/style.css ~/.config/waybar/style.css
 
 ohmyzsh:
-	rm -f ~/.zshrc
+	rm -f ~/.zshrc ~/.zshenv
 	ln -s $(PWD)/zshrc ~/.zshrc
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh || true
 
