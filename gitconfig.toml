@@ -1,37 +1,37 @@
 [init]
-  defaultBranch = main
+defaultBranch = main
 
 [core]
-  editor = vim
-  pager = delta
+editor = vim
+pager = delta
 
 [user]
-  name = Mads Bram Cordes
-  email = Mobilpadde@gmail.com
-  username = Mobilpadde
+name = Mads Bram Cordes
+email = Mobilpadde@gmail.com
+username = Mobilpadde
 
 [alias]
-  who = shortlog -s --
-  save = stash save -u
-  pop = stash pop
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+who = shortlog -s --
+save = stash save -u
+pop = stash pop
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
 
 [push]
-  default = upstream
+default = upstream
 
 [pull]
-  rebase = false
+rebase = false
 
 [merge]
-  conflictstyle = diff3
+conflictstyle = diff3
 
 [diff]
-  colorMoved = default
+colorMoved = default
 
 # delta
 [interactive]
-  diffFilter = delta --color-only
+diffFilter = delta --color-only
 
 [delta]
-  line-numbers = true
-  features = decorations zebra-dark
+features = decorations zebra-dark
+line-numbers = true

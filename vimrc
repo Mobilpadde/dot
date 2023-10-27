@@ -5,14 +5,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 if (has("termguicolors"))
- set termguicolors
+  set termguicolors
 endif
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+-- Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 Plug 'ollykel/v-vim'
 
@@ -20,9 +20,7 @@ Plug 'NoorWachid/VimVLanguage'
 
 Plug 'tpope/vim-surround'
 
-Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
-
-Plug 'tpope/vim-commentary'
+-- Plug 'tpope/vim-commentary'
 
 Plug 'scrooloose/nerdtree'
 
@@ -186,7 +184,7 @@ set ts=2
 set sw=2
 set et
 
-"Go
+" go
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
