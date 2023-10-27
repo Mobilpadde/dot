@@ -40,7 +40,7 @@ starship:
 extras: crates git
 
 crates:
-	cargo install exa xcp fd-find bottom bat git-delta tokei fnm
+	cargo install exa xcp fd-find bottom bat git-delta tokei fnm atuin
 
 git:
 	ln -s $(PWD)/gitconfig.toml ~/.gitconfig
