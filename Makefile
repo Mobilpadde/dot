@@ -1,4 +1,4 @@
-all: vim ohmyzsh neofetch starship extras # x tmux tmuxinator i3
+all: sway waybar vim ohmyzsh neofetch starship extras # x tmux tmuxinator i3
 
 vim:
 	rm -f ~/.vimrc
