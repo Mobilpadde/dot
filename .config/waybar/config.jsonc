@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/updater", "pulseaudio", "network", "temperature", "cpu", "memory", "tray", "clock"],
+    "modules-right": ["custom/updater", "pulseaudio", "network", "bluetooth", "temperature", "cpu", "memory", "battery", "tray", "clock"],
     "sway/window" :{
         "all-outputs" : false,
         "offscreen-css" : true,
@@ -32,11 +32,26 @@
     "clock": {
         "format-alt": "{:%Y-%m-%d}"
     },
+
     "cpu": {
-        "format": "{usage}% cpu"
+        "interval": 10,
+        "format": "󰘚",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \\$once \\$term_float htop",
+        "tooltip": true
     },
     "memory": {
-        "format": "{}% mem"
+        "interval": 10,
+        "format": "󰍛",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \\$once \\$term_float htop",
+        "tooltip": true
     },
     "battery": {
         "bat": "BAT0",
@@ -51,11 +66,30 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "Disconnected ⚠"
+        "interval": 5,
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{icon} {ifname}: {ipaddr}",
+        "tooltip-format-ethernet": "{icon} {ifname}: {ipaddr}",
+        "tooltip-format-wifi": "{icon} {ifname} ({essid}): {ipaddr}",
+        "tooltip-format-disconnected": "{icon} disconnected",
+        "tooltip-format-disabled": "{icon} disabled",
+        "on-click": "swaymsg exec \\$once \\$term_float nmtui connect"
     },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "on-click": "swaymsg exec \\$bluetooth",
+        "on-click-right": "rfkill toggle bluetooth",
+        "tooltip-format": "{}"
+    },
+    // "network": {
+    //     // "interface": "wlp2s0", // (Optional) To force the use of this interface
+    //     "format-wifi": "{essid} ({signalStrength}%)",
+    //     "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+    //     "format-disconnected": "Disconnected ⚠"
+    // },
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{volume}% {icon}",
@@ -71,6 +105,7 @@
             "default": ["", ""]
         }
     },
+
     "custom/updater":{
         "format": " {} Update(s)",
         "exec": "checkupdates | wc -l",
