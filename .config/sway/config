@@ -40,6 +40,7 @@ gaps outer 0
 focus_follows_mouse yes
 
 # screenshots
+$unbindsym $mod+s
 $unbindsym $mod+Shift+s
 
 $bindsym $mod+Shift+s exec grim -g "$(slurp)" - | $swappy | wl-paste -l
