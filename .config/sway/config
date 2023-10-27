@@ -5,11 +5,11 @@
 # Read `man 5 sway` for a complete reference.
 
 # styles - set the folder for your theme definition file
-set $theme /usr/share/sway/themes/matcha-green
+# set $theme /usr/share/sway/themes/matcha-green
 
 # theme variables
-include $theme/definitions
-include $HOME/.config/sway/definitions.d/catppuccin-mocha
+# include $theme/definitions
+include $HOME/.config/sway/definitions.d/catppuccin-mocha.conf
 
 # global variables
 include /etc/sway/definitions
