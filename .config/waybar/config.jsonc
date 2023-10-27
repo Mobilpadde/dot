@@ -80,7 +80,7 @@
     },
     "custom/cpu":{
         "format": " {} Update(s)",
-        "exec": "$HOME/.config/waybar/custom_modules/cpugovernor.sh",
+        "exec": "$HOME/.config/waybar/custom/cpugovernor.sh",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 15,
         "on-click": "foot -e yay -Syu && notify-send 'The system has been updated' "
