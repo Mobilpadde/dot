@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
--- Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+"Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 Plug 'ollykel/v-vim'
 
@@ -20,7 +20,7 @@ Plug 'NoorWachid/VimVLanguage'
 
 Plug 'tpope/vim-surround'
 
--- Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 
 Plug 'scrooloose/nerdtree'
 
