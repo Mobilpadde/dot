@@ -1,0 +1,53 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# styles - set the folder for your theme definition file
+set $theme /usr/share/sway/themes/matcha-green
+
+# theme variables
+include $theme/definitions
+# include $HOME/.cache/wal/colors-sway
+include $HOME/.config/sway/definitions.d/catppuccin-mocha
+
+# global variables
+include /etc/sway/definitions
+
+# user variables
+include $HOME/.config/sway/definitions.d/*.conf
+
+include /etc/sway/inputs/*
+include /etc/sway/outputs/*
+
+# enable modes
+include /etc/sway/modes/*
+
+# only enable this if every app you use is compatible with wayland
+# xwayland disable
+
+# include additional configs e.g. to autostart applications
+include /etc/sway/config.d/*
+
+# user config
+include $HOME/.config/sway/config.d/*.conf
+
+# output DP-2 pos 1920 0
+# output HDMI-A-1 pos 0 0
+# output DP-3 pos -1920 0
+
+# exec wal -R
+# exec swww init
+
+smart_gaps off
+gaps inner 4
+gaps outer 0
+# default_border pixel 5
+
+focus_follows_mouse yes
+
+$unbindsym $mod+Shift+s
+
+$bindsym $mod+Shift+s exec grim -g "$(slurp)" - | $swappy | wl-paste -l
+$bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy

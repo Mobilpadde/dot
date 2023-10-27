@@ -19,6 +19,12 @@ i3:
 	rm -f ~/.i3/config
 	ln -s $(PWD)/i3.conf ~/.i3/config
 
+sway:
+	# rm -rfd ~/.config/sway
+	mkdir -p ~/.config/sway
+	ln -s $(PWD)/.config/sway/config.d/catppuccin-macchiato.conf ~/.config/sway/definitions.d/catppuccin-mocha
+	ln -s $(PWD)/.config/sway/config ~/.config/sway/config
+
 ohmyzsh:
 	rm -f ~/.zshrc
 	ln -s $(PWD)/zshrc ~/.zshrc
