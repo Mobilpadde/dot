@@ -65,10 +65,12 @@ $bindsym $mod+Shift+s exec grim -g "$(slurp)" - | $swappy | wl-paste -l
 $bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy
 
 ## menus
-### dmenu - replace with rofi in future?
+### dmenu - customize in future?
 $bindsym $mod+space exec $menu
 ### emojies
 $bindsym $mod+Shift+space exec rofimoji -a copy -s neutral
+### calc
+$bindsym $mod+Ctrl+space exec rofi -show calc -modi calc -calc-command "echo -n '{result}' | wl-copy"
 
 ## floating
 $bindsym $alt_mod+space floating toggle
