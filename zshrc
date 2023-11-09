@@ -8,7 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 #source ~/antigen.zsh
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
-    git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 # Source antidote.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
@@ -211,7 +211,7 @@ set-wall() {
 }
 
 stats() {
-  url=$(curl -s https://api.atuin.sh/enable -d $(cat ~/.local/share/atuin/session) | tr -d "\"") 
+  url=$(curl -s https://api.atuin.sh/enable -d $(cat ~/.local/share/atuin/session) | tr -d "\"")
   wl-copy $url
 
   img=$HOME/Pictures/atuin-stats.png
@@ -239,16 +239,12 @@ alias cat="bat"
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-source "$HOME/.cargo/env"
+#source "$HOME/.cargo/env"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 
-#source <(atuin init zsh)
 #eval "$(atuin init zsh)"
 
 # eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# wal -R -et
-# clear
 
 neofetch
