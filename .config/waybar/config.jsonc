@@ -1,12 +1,12 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar at the bottom of your screen
-    "height": 12, // Waybar height
+    "height": 18, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/updater", "pulseaudio", "network", "bluetooth", "temperature", "cpu", "memory", "battery", "tray", "clock"],
+    "modules-right": ["custom/updater", "pulseaudio", "network", "bluetooth", "temperature", "cpu", "memory", "tray", "clock"],
     "sway/window" :{
         "all-outputs" : false,
         "offscreen-css" : true,
@@ -129,8 +129,8 @@
         "format": " {} Update(s)",
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 15,
-        "on-click": "foot -e yay -Syu && notify-send 'The system has been updated' "
+        "interval": 60,
+        "on-click": "foot -e yay -Syu && notify-send 'The system has been updated'"
     },
     "custom/cpu":{
         "format": " {} Update(s)",

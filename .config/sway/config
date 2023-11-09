@@ -32,10 +32,18 @@ include /etc/sway/config.d/*
 # user config
 include $HOME/.config/sway/config.d/*.conf
 
+xwayland enable
+
 smart_gaps off
 gaps inner 4
 gaps outer 0
-# default_border pixel 5
+
+corner_radius 2
+
+blur_xray enable
+blur enable
+blur_passes 2
+blur_radius 4
 
 focus_follows_mouse yes
 
@@ -55,6 +63,7 @@ $unbindsym $mod+Shift+s
 $unbindsym $mod+space # focus mode_toggle
 ## unbind floating toggle
 $unbindsym $mod+Shift+space
+$unbindsym $alt_mod+space
 
 ## dmenu
 $unbindsym $mod+d
@@ -74,3 +83,35 @@ $bindsym $mod+Ctrl+space exec rofi -show calc -modi calc -calc-command "echo -n 
 
 ## floating
 $bindsym $alt_mod+space floating toggle
+
+set $mode_shutdown "\
+<span><span foreground='$color10'></span>  \
+<span foreground='$color5'> \
+<span foreground='$color10'>(<b>h</b>)</span>hibernate \
+<span foreground='$color10'>(<b>l</b>)</span>lock \
+<span foreground='$color10'>(<b>e</b>)</span>logout \
+<span foreground='$color10'>(<b>r</b>)</span>reboot \
+<span foreground='$color10'>(<b>u</b>)</span>suspend \
+<span foreground='$color10'>(<b>s</b>)</span>shutdown \
+</span></span>"
+
+for_window [title="Sign in – Google accounts"] floating enable
+
+$unbindsym $mod+Shift+e
+#$bindsym $mod+Shift+e mode $mode_shutdown
+
+set $mode_system (l) lock, (e) logout, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
+mode "$mode_system" {
+  bindsym l exec $Locker, mode "default"
+  bindsym e exit
+  bindsym s exec --no-startup-id systemctl suspend, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym q mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
