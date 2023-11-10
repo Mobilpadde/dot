@@ -46,7 +46,7 @@ antidote bundle spaceship-prompt/spaceship-prompt
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # antidote theme candy
 
-antidote bundle atuinsh/atuin path:atuin.plugin.zsh
+#antidote bundle atuinsh/atuin path:atuin.plugin.zsh
 
 #antigen apply
 #
@@ -243,6 +243,7 @@ alias cat="bat"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 
+source <(atuin init zsh)
 #eval "$(atuin init zsh)"
 
 # eval "$(/opt/homebrew/bin/brew shellenv)"
