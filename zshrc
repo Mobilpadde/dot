@@ -6,7 +6,6 @@ export TERM=gnome-256color
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-#source ~/antigen.zsh
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
@@ -17,7 +16,7 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 # from static mode.
 source <(antidote init)
 
-#antidote use oh-my-zsh
+#antidote bundle ohmyzsh/ohmyzsh
 
 antidote bundle ohmyzsh/ohmyzsh path:plugins/git
 antidote bundle ohmyzsh/ohmyzsh path:plugins/git-auto-fetch
@@ -25,7 +24,6 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/git-auto-fetch
 antidote bundle ohmyzsh/ohmyzsh path:plugins/aliases
 
 # antidote bundle themes
-# antidote bundle emoji-clock
 antidote bundle ohmyzsh/ohmyzsh path:plugins/dotenv
 antidote bundle ohmyzsh/ohmyzsh path:plugins/fzf
 antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
@@ -48,12 +46,18 @@ antidote bundle spaceship-prompt/spaceship-prompt
 
 #antidote bundle atuinsh/atuin path:atuin.plugin.zsh
 
+antidote bundle ohmyzsh/ohmyzsh path:plugins/vscode
+antidote bundle ohmyzsh/ohmyzsh path:plugins/thefuck
+antidote bundle MichaelAquilina/zsh-you-should-use
+
 #antigen apply
 #
 # Install rustup if it isn't installed already
 if ! [[ -s "${HOME}/.rustup" ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
 fi
+
+VSCODE=codium
 
 alias gcd="git checkout dev"
 alias gap="git add -p"
