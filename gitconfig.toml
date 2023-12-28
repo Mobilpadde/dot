@@ -1,6 +1,10 @@
 [init]
 defaultBranch = main
 
+[status]
+short = true
+branch = true
+
 [core]
 editor = vim
 pager = delta
