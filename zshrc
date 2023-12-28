@@ -163,6 +163,9 @@ export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$DOTNET_ROOT:$PATH
 export PATH=$DOTNET_ROOT/tools:$PATH
 
+export JETBRAINS_TOOLBOX="$HOME/.local/share/JetBrains/Toolbox"
+export PATH="$JETBRAINS_TOOLBOX/scripts":$PATH
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #
 # The next line updates PATH for the Google Cloud SDK.
