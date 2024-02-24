@@ -22,6 +22,7 @@ lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
 
 [push]
 default = upstream
+followTags = true
 
 [pull]
 rebase = false
@@ -30,7 +31,8 @@ rebase = false
 conflictstyle = diff3
 
 [diff]
-colorMoved = default
+colormoved = default
+colormovedws = allow-indentation-change
 
 # delta
 [interactive]
