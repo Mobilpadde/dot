@@ -1,3 +1,5 @@
+alias vim=nvim
+
 export EDITOR="vim"
 export BROWSER="vivaldi-stable"
 
@@ -256,3 +258,7 @@ source <(atuin init zsh)
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 neofetch
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/nomad nomad
+source <(kubectl completion zsh)

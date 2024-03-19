@@ -6,7 +6,7 @@ short = true
 branch = true
 
 [core]
-editor = vim
+editor = nvim
 pager = delta
 
 [user]
