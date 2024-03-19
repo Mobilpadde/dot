@@ -30,8 +30,8 @@ i3:
 	ln -s $(PWD)/i3.conf ~/.i3/config
 
 alacritty:
-	rm -f ~/.alacritty.yml
-	ln -s $(PWD)/alacritty.yml ~/.alacritty.yml
+	rm -f ~/.alacritty.toml
+	ln -s $(PWD)/alacritty.toml ~/.alacritty.toml
 
 yay:
 	yay -S \
