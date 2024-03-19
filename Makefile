@@ -1,8 +1,8 @@
-.PHONY: i3 yay vim alacritty starship zsh neofetch gtk polybar crates git
+.PHONY: i3 picom yay vim alacritty starship zsh neofetch gtk polybar crates git
 all: main extras
 
 # --- main sstuff ---
-main: i3 yay vim alacritty starship zsh neofetch gtk polybar
+main: i3 picom yay vim alacritty starship zsh neofetch gtk polybar
 vim:
 	rm -f ~/.vimrc
 	ln -s $(PWD)/vimrc ~/.vimrc
@@ -32,6 +32,10 @@ i3:
 alacritty:
 	rm -f ~/.alacritty.toml
 	ln -s $(PWD)/alacritty.toml ~/.alacritty.toml
+
+picom:
+	rm -fr ~/.config/picom
+	ln -s $(PWD)/picom.conf ~/picom/picom.conf
 
 yay:
 	yay -S \
