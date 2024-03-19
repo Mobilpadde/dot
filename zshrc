@@ -256,3 +256,5 @@ source <(atuin init zsh)
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 neofetch
+
+source <(kubectl completion zsh)
