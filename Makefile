@@ -47,15 +47,7 @@ yay:
 
 polybar:
 	rm -rfd ~/.config/polybar
-	mkdir -p ~/.config/polybar/modules
-	ln -s $(PWD)/polybar/modules/weather.sh ~/.config/polybar/modules/weather.sh
-	ln -s $(PWD)/polybar/modules/updates.sh ~/.config/polybar/modules/updates.sh
-	ln -s $(PWD)/polybar/colors.ini ~/.config/polybar/colors.ini
-	ln -s $(PWD)/polybar/fonts.ini ~/.config/polybar/fonts.ini
-	ln -s $(PWD)/polybar/main-bar.ini ~/.config/polybar/main-bar.ini
-	ln -s $(PWD)/polybar/modules.ini ~/.config/polybar/modules.ini
-	ln -s $(PWD)/polybar/settings.ini ~/.config/polybar/settings.ini
-	ln -s $(PWD)/polybar/config.ini ~/.config/polybar/config.ini
+	ln -s $(PWD)/polybar ~/.config
 
 # --- extra stuff ---
 extras: crates git
