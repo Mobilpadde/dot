@@ -35,12 +35,14 @@ alacritty:
 
 picom:
 	rm -fr ~/.config/picom
-	ln -s $(PWD)/picom.conf ~/picom/picom.conf
+	mkdir ~/.config/picom
+	ln -s $(PWD)/picom.conf ~/.config/picom/picom.conf
 
 yay:
 	yay -S \
 		zsh starship neofetch \
 		jq pulseaudio pavucontrol \
+		zoxide \
 		alacritty polybar flameshot \
 		ctags go rustup \
 		rofi rofimoji rofi-calc \

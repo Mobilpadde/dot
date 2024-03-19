@@ -37,7 +37,6 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 
 antidote bundle ohmyzsh/ohmyzsh path:plugins/golang
 
-antidote bundle agkozak/zsh-z
 antidote bundle zsh-users/zsh-completions
 antidote bundle zsh-users/zsh-autosuggestions
 antidote bundle zsh-users/zsh-syntax-highlighting
@@ -262,3 +261,5 @@ neofetch
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/nomad nomad
 source <(kubectl completion zsh)
+
+eval "$(zoxide init zsh)"
