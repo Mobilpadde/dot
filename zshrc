@@ -31,7 +31,7 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/fzf
 antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
 # antidote bundle term_tab
 
-#antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
+antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 
@@ -174,8 +174,6 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
-# source <(kubectl completion zsh)
-
 bindkey '^H' backward-kill-word
 
 # Tokei on cd'ing into a repo
@@ -260,6 +258,6 @@ neofetch
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/nomad nomad
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 
 eval "$(zoxide init zsh)"
