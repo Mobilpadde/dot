@@ -32,6 +32,7 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
 # antidote bundle term_tab
 
 antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
+antidote bundle ohmyzsh/ohmyzsh path:plugins/helm
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 
@@ -50,6 +51,8 @@ antidote bundle spaceship-prompt/spaceship-prompt
 antidote bundle ohmyzsh/ohmyzsh path:plugins/vscode
 antidote bundle ohmyzsh/ohmyzsh path:plugins/thefuck
 antidote bundle MichaelAquilina/zsh-you-should-use
+
+# antidote bundle gitlab.com/code-stats/code-stats-zsh
 
 #antigen apply
 #
@@ -261,3 +264,5 @@ complete -o nospace -C /usr/bin/nomad nomad
 #source <(kubectl completion zsh)
 
 eval "$(zoxide init zsh)"
+
+CODESTATS_API_KEY="SFMyNTY.VFc5aWFXeHdZV1JrWlE9PSMjTWpJMU56ST0.BXpgjvJ9pxGoqRu4x9FwPQapj7H7fcaW8mTUrMF-tVk"
